@@ -1,7 +1,7 @@
 export const products = [
   {
     id: 1,
-    name: "Aurora Headphones",
+    name: "AMAZON ECHO SPEAKER",
     category: "Audio",
     price: 12999,
     rating: 4.8,

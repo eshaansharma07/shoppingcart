@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import { Analytics } from "@vercel/analytics/react";
 import App from "./App";
 import { store } from "./app/store";
 import theme from "./theme";
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <App />
+        <Analytics />
       </ThemeProvider>
     </Provider>
   </React.StrictMode>

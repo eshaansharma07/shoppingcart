@@ -9,6 +9,7 @@ A polished full-stack shopping cart project built with React, Vite, Material UI,
 - Cart persistence using `localStorage`
 - Material UI storefront UI with product cards and a checkout drawer
 - Backend API routes for `/api/products` and `/api/health`
+- Vercel Analytics integration for page view tracking
 - Vercel-ready structure for frontend + backend deployment
 
 ## Tech stack
@@ -81,11 +82,13 @@ git push origin main
 3. Click **Add New Project**.
 4. Import `eshaansharma07/shoppingcart`.
 5. Keep the default Vite settings and deploy.
+6. Install dependencies so `@vercel/analytics` is included in the build.
 
 After deployment:
 
 - Frontend will be served by Vercel
 - Backend routes will be available at `/api/products` and `/api/health`
+- Analytics will begin tracking page visits in the Vercel dashboard
 
 ## Redux features covered
 

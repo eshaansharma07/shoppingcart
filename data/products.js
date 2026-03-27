@@ -1,7 +1,7 @@
 export const products = [
   {
     id: 1,
-    name: "AMAZON ECHO SPEAKER",
+    name: "Amazon Echo Speaker",
     category: "Audio",
     price: 12999,
     rating: 4.8,

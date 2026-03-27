@@ -16,6 +16,7 @@ import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart, removeFromCart, updateQuantity } from "../features/cart/cartSlice";
 import { selectCartItems, selectCartSummary } from "../features/cart/cartSelectors";
+import { formatCurrency } from "../utils/currency";
 
 function Row({ label, value, strong = false, muted = false }) {
   return (
@@ -162,7 +163,7 @@ function CartDrawer({ open, onClose }) {
                         <AddRoundedIcon fontSize="small" />
                       </IconButton>
                     </Stack>
-                    <Typography variant="h6">${item.price * item.quantity}</Typography>
+                    <Typography variant="h6">{formatCurrency(item.price * item.quantity)}</Typography>
                   </Stack>
                 </Box>
               </Stack>
@@ -180,11 +181,11 @@ function CartDrawer({ open, onClose }) {
           }}
         >
           <Stack spacing={1.4}>
-            <Row label="Subtotal" value={`$${summary.subtotal.toFixed(2)}`} muted />
-            <Row label="Shipping" value={`$${summary.shipping.toFixed(2)}`} muted />
-            <Row label="Tax" value={`$${summary.tax.toFixed(2)}`} muted />
+            <Row label="Subtotal" value={formatCurrency(summary.subtotal)} muted />
+            <Row label="Shipping" value={formatCurrency(summary.shipping)} muted />
+            <Row label="Tax" value={formatCurrency(summary.tax)} muted />
             <Divider sx={{ borderColor: "rgba(255,255,255,0.12)", my: 1 }} />
-            <Row label="Total" value={`$${summary.total.toFixed(2)}`} strong />
+            <Row label="Total" value={formatCurrency(summary.total)} strong />
             <Button
               variant="contained"
               color="primary"

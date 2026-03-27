@@ -13,6 +13,7 @@ import {
 import AddShoppingCartRoundedIcon from "@mui/icons-material/AddShoppingCartRounded";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../features/cart/cartSlice";
+import { formatCurrency } from "../utils/currency";
 
 function ProductGrid({ products }) {
   const dispatch = useDispatch();
@@ -69,7 +70,7 @@ function ProductGrid({ products }) {
                   <Typography color="text.secondary">{product.description}</Typography>
                 </Box>
                 <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <Typography variant="h5">${product.price}</Typography>
+                  <Typography variant="h5">{formatCurrency(product.price)}</Typography>
                   <Button
                     variant="contained"
                     startIcon={<AddShoppingCartRoundedIcon />}
